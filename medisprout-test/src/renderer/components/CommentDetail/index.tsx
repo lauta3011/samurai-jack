@@ -1,6 +1,8 @@
 import { useQuery, useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
 
+import { Card, CardContent, Typography } from "@mui/material";
+
 import TComment from "../../../types/comment";
 
 const CommentDetail = (): JSX.Element => {
@@ -17,9 +19,16 @@ const CommentDetail = (): JSX.Element => {
     if(isError) { return <span>ERROR!</span>}
 
     return (
-        <div>
-            <span>{data?.body}</span>
-        </div>
+        <Card>
+            <CardContent sx={{ backgroundColor: 'secondary.light' }}>
+                <Typography gutterBottom variant="h5" component="div">
+                    {data?.email}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {data?.body}
+                </Typography> 
+            </CardContent>
+        </Card>
     )
 }
 

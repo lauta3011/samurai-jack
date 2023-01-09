@@ -1,13 +1,16 @@
 import TComment from "../../../types/comment";
-import "./style.css";
+import { useNavigate } from 'react-router-dom';
+import { TableRow, TableCell,  } from '@mui/material/';
 
 const Comment = (props: TComment): JSX.Element => {
+    const navigate = useNavigate();
+
     return (
-        <div className="Comment">
-            <span>{props.email}</span>
-            <span>{props.name}</span>
-            <span>{props.body}</span>
-        </div>
+        <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 }, backgroundColor: 'primary.dark', '&:hover': { backgroundColor: 'primary.main' }}} onClick={() => navigate(`/comment/${props.id}`)} key={props.id} >
+            <TableCell component="th" scope="row">{props.email}</TableCell>
+            <TableCell align="right">{props.name}</TableCell>
+            <TableCell align="right">{props.body}</TableCell>
+        </TableRow>
     )
 }
 

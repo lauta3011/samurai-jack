@@ -1,10 +1,13 @@
-import AllComments from "../../components/AllComments";
+import AllComments from "../../components/CommentList";
+import { Typography, Card } from "@mui/material";
 
 const Home = (): JSX.Element => {    
     return (
         <div className="HomeScreen">
-            <h1>home</h1>
-            <AllComments />
+            <Card sx={{ backgroundColor: 'secondary.dark', color:'primary.light', padding:'15px' }}>
+                <Typography variant="h5">home</Typography>
+                <AllComments />
+            </Card>
         </div>
     )
 }

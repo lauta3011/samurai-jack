@@ -3,5 +3,6 @@ export default interface TComment {
     id: number,
     name: string,
     email: string,
-    body: string
+    body: string,
+    handleClick?: () => void
 }
