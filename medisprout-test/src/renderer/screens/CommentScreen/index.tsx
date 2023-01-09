@@ -1,10 +1,15 @@
 import CommentDetail from '../../components/CommentDetail'
-import { Typography, Card } from "@mui/material";
+import { Typography, Breadcrumbs, Link, Card } from "@mui/material";
 
 const Comment = (): JSX.Element => {
     return (
         <Card sx={{ backgroundColor: 'secondary.dark', color:'primary.light', padding:'15px' }}>
-            <Typography variant='h5'>los comments</Typography>
+            <Breadcrumbs aria-label="breadcrumb" sx={{ padding:'15px', color:'primary.light' }}>
+                <Link underline="hover" color="inherit" href="/">
+                    HOME
+                </Link>
+                <Typography sx={{ color:"white" }}>COMMENT</Typography>
+            </Breadcrumbs>
             <CommentDetail />
         </Card>
     )
