@@ -1,12 +1,14 @@
 import { useQuery, useQueryClient } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { Card, CardContent, Typography } from "@mui/material";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import TComment from "../../../types/comment";
+import TComment from "../../types/comment";
 
 const CommentDetail = (): JSX.Element => {
     const queryClient = useQueryClient();
+    const navigate = useNavigate();
     const { id } = useParams();
 
     const { isLoading, isError, data } = useQuery<TComment>(['comment', id], { initialData: () => {
@@ -20,7 +22,10 @@ const CommentDetail = (): JSX.Element => {
 
     return (
         <Card>
-            <CardContent sx={{ backgroundColor: 'secondary.light' }}>
+            <CardContent sx={{ backgroundColor: 'secondary.light', }}>
+                <ArrowBackIcon onClick={() => navigate('/')} />
+            </CardContent>
+            <CardContent sx={{ backgroundColor: 'primary.dark' }}>
                 <Typography gutterBottom variant="h5" component="div">
                     {data?.email}
                 </Typography>

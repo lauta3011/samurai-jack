@@ -1,5 +1,5 @@
 import axios from "axios";
-import TComment from '../types/comment';
+import TComment from '../renderer/types/comment';
 
 const apiClient = axios.create({
     baseURL: "https://jsonplaceholder.typicode.com/",

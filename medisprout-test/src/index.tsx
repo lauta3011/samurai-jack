@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -9,8 +8,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import Home from './renderer/screens/Home';
-import Comment from './renderer/screens/CommentScreen';
+import AppWrapper from './renderer/components/AppWrapper';
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -33,12 +31,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <QueryClientProvider client={queryClient}>    
     <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/comment/:id" element={ <Comment /> } />
-        </Routes>
-      </BrowserRouter>
+      <AppWrapper />
     </React.StrictMode>
     <ReactQueryDevtools />
   </QueryClientProvider>

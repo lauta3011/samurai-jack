@@ -1,4 +1,4 @@
-import TComment from "../../../types/comment";
+import TComment from "../../types/comment";
 import { useNavigate } from 'react-router-dom';
 import { TableRow, TableCell,  } from '@mui/material/';
 

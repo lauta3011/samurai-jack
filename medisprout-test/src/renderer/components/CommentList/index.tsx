@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { Paper, Table, TableRow, TableBody, TableContainer, TableCell, TableHead } from '@mui/material/';
 
-import TComment from "../../../types/comment";
+import TComment from "../../types/comment";
 import CommentAPI from "../../../api";
 
 import Comment from "../Comment";
