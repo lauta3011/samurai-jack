@@ -12,6 +12,7 @@ import AppWrapper from './renderer/components/AppWrapper';
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
+//query client is the provider that lets us cache the data fetched from the api
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

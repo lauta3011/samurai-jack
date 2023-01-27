@@ -11,6 +11,7 @@ const CommentDetail = (): JSX.Element => {
     const navigate = useNavigate();
     const { id } = useParams();
 
+    //fetch a single comment from the cache using the id passed from url
     const { isLoading, isError, data } = useQuery<TComment>(['comment', id], { initialData: () => {
         const state = queryClient.getQueryState<TComment[]>('comments');
         return state?.data?.find((d:TComment ) => d.id.toString() === id);
@@ -21,9 +22,9 @@ const CommentDetail = (): JSX.Element => {
     if(isError) { return <span>ERROR!</span>}
 
     return (
-        <Card>
+        <Card data-testid="detail-page">
             <CardContent sx={{ backgroundColor: 'secondary.light', }}>
-                <ArrowBackIcon onClick={() => navigate('/')} />
+                <ArrowBackIcon data-testid="back-button" onClick={() => navigate('/')} />
             </CardContent>
             <CardContent sx={{ backgroundColor: 'primary.dark' }}>
                 <Typography gutterBottom variant="h5" component="div">

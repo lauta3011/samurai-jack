@@ -8,13 +8,8 @@ import AllComments from "../CommentList";
 import CommentDetail from "../CommentDetail";
 import { Card } from "@mui/material";
 
-const ScreenWrapper = (): JSX.Element => {    
-    const { isLoading, isError, data } = useQuery<TComment[]>({ queryKey:'comments', queryFn: CommentAPI.getComments });
-
-    if(isLoading) { return <span>loading...</span>}
-    
-    if(isError) { return <span>ERROR!</span>}
-
+//wrapping the app with the proper routes
+const ScreenWrapper = (): JSX.Element => {   
     return (
         <div className="ScreenWrapper">
             <Card sx={{ backgroundColor: 'secondary.dark', color:'primary.light', padding:'15px' }}>
